@@ -1,0 +1,48 @@
+
+
+	<div class="container">
+	<div class="row">
+	    <div class="center col-sm-12">
+<img src="/assets/img/eat.jpeg">
+     <h1>Eat-Da-Burger App</h1>
+
+	    </div>
+  	</div>
+			<div class="row">
+				<div class="col-md-6 isdevoured">
+			<h2>Burgers Available To Eat!</h2>
+
+			<ul>
+			  {{#each burgers}}
+			    {{#unless devoured}}
+						{{> burger-block devoured=true}}
+					{{/unless}}
+					{{/each}}
+				</ul>
+			</div>
+
+			<div class="col-md-6">
+			<h2>Burgers That Have Been Eaten!</h2>
+				<ul>
+			  {{#each burgers}}
+			    {{#if devoured}}
+			     	{{> burger-block devoured=false}}
+					{{/if}}
+					{{/each}}
+					<ul>
+					</div>
+				</div>
+
+			<h2>Add A Burger!</h2>
+			<form class="create-form">
+			  <div class="form-group">
+					<p>Enter a burger you want to order and click the Submit Order button.</p>
+					<input type="text" id="ca" name="burger_name">
+
+			  </div>
+				 <button class="btn-primary" type="submit">Submit Order</button>
+
+
+			</form>
+
+</div>

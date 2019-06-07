@@ -1,0 +1,23 @@
+{
+  "development": {
+    "user": "root",
+    "password": "password",
+    "database": "burger_db",
+    "host": "127.0.0.1",
+    "port": 3306
+  },
+  "test": {
+    "user": "root",
+    "password": "password",
+    "database": "burger_db",
+    "host": "127.0.0.1",
+    "port": 3306
+  },
+  "production": {
+    "user": "hpxqnh3r96446p65",
+    "password": "urqx55xixzifd6ky",
+    "database": "bsnu6ttze2baz039",
+    "host": "lyl3nln24eqcxxot.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
+    "port": 3306
+  }
+}
