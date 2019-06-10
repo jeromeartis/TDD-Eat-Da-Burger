@@ -1,15 +1,4 @@
-// Import MySQL connection.
-const isBurgerValueValid = function(burgername){
-  return burgername.length >= 10;
-}
 
-const isDevouredTrue = function(value){
-  return value === true
-}
-
-const isDevouredFalse = function(value) {
-  return value === false
-}
 
 // Make sure we wait to attach our handlers until the DOM is fully loaded.
 $(function() {
@@ -28,7 +17,6 @@ $(function() {
       type: 'PUT',
       data: newBurgerState
     }).then(function() {
-        console.log("jaldjkaljk")
         console.log('changed devoured to', newBurger);
         // Reload the page to get the updated list
         location.reload();

@@ -1,12 +1,16 @@
 // Import MySQL connection.
 var connection = require("../config/connection.js");
-
+const dbConfig = require('../config/config.json')
 const environment = process.env.NODE_ENV || "development";
+
+// connect to DB as specified in our config file, based on current environment
+
 
 const orm = {
     //This will be posting the new user data to the database
     all: function(tableInput, cb){
         const queryString = 'SELECT * FROM ??';
+
         connection.query(queryString, [tableInput], function(err,result){
             if (err) {
               throw err
