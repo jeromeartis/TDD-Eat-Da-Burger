@@ -15,7 +15,8 @@ app.use(express.json());
 const exphbs = require('express-handlebars');
 
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
-// app.engine('handlerbars', exphbs({ test: 'test' }));
+//app.engine('handlerbars', exphbs({ defaultLayout: 'test' }));
+
 app.set('view engine', 'handlebars');
 // Import routes and give the server access to them.
 

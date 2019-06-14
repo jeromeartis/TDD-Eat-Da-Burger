@@ -2,7 +2,7 @@ const mysql = require('mysql');
 const dbConfig = require('../config/config.json')
 
 
-const environment = process.env.NODE_ENV || "development";
+ const environment = process.env.NODE_ENV || "development";
 
 console.log(environment)
 const connection = mysql.createConnection( dbConfig[environment] );

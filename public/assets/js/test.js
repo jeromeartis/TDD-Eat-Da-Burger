@@ -48,36 +48,36 @@ const isDevouredFalse = function (){
 // });
 
 // Functional Tests
-describe("isBurgerValid", function () {
-
-  const data = [
-    { burger_name: 'Double Cajun Burger', devoured: false },
-  ];
-
-  let server;
-
-  beforeEach(function () {
-    server = sinon.fakeServer.create();
-  });
-
-  afterEach(function () {
-    server.restore();
-  });
-
-  it("should return object", function (){
-
-    server.respondWith('POST', '/api/burgers/', [
-      200, { 'Content-Type': 'application/json' }, JSON.stringify(data)
-    ]);
-
-    $('#ca').val('Double Cajun Burger');
-
-
-    $('#btn-primary').trigger('click');
-
-    server.respond();
-
-    expect(isBurgerValid(data)).to.be.an('object');
-
-  });
-});
+// describe("isBurgerValid", function () {
+//
+//   const data = [
+//     { burger_name: 'Double Cajun Burger', devoured: false },
+//   ];
+//
+//   let server;
+//
+//   beforeEach(function () {
+//     server = sinon.fakeServer.create();
+//   });
+//
+//   afterEach(function () {
+//     server.restore();
+//   });
+//
+//   it("should return object", function (){
+//
+//     server.respondWith('POST', '/api/burgers/', [
+//       200, { 'Content-Type': 'application/json' }, JSON.stringify(data)
+//     ]);
+//
+//     $('#ca').val('Double Cajun Burger');
+//
+//
+//     $('#btn-primary').trigger('click');
+//
+//     server.respond();
+//
+//     expect(isBurgerValid(data)).to.be.an('object');
+//
+//   });
+// });

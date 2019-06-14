@@ -3,12 +3,13 @@ const chaiHttp = require("chai-http");
 const server = require("./server");
 const expect = chai.expect;
 
+environment = process.env.NODE_ENV || "development";
 
 // API Endpoint Testing
 // Setting up the chai http plugin. This plugin allows for HTTP integration testing with Chai assertions!
 chai.use(chaiHttp);
 
-  // set a variable for making http requests.
+// set a variable for making http requests.
 let request;
 
 describe('POST /api/burgers', function() {
@@ -40,10 +41,37 @@ describe('POST /api/burgers', function() {
 
         expect(responseBody)
           .to.be.an('object')
-          // .that.includes({ affectedRows: 1 });
+        // .that.includes({ affectedRows: 1 });
 
         // The `done` function is used to end any asynchronous tests
         done();
       });
+  });
+});
+
+describe('GET /api/burgers', function() {
+
+  beforeEach(function() {
+    request = chai.request(server);
+  });
+
+  it('should find all examples', async function() {
+
+    //hit the GET('/api/users') endpoint
+    try {
+    const res = await request.get('/api/burgers');
+
+
+      let responseStatus = res.status;
+      let responseBody = res.body;
+      console.log(res.body)
+      expect(responseBody).to.equal('hi');
+      // Run assertions on the response
+      expect(responseStatus).to.equal(200);
+
+    } catch (err) {
+      expect(err.message).to.be.null;
+
+    }
   });
 });
