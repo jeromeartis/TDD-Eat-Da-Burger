@@ -55,7 +55,7 @@ describe('GET /api/burgers', function() {
     request = chai.request(server);
   });
 
-  it('should find all examples', async function() {
+  it('should find all burger examples', async function() {
 
     //hit the GET('/api/users') endpoint
     try {
@@ -66,6 +66,32 @@ describe('GET /api/burgers', function() {
       let responseBody = res.body;
       console.log(res.body)
       expect(responseBody).to.equal('hi');
+      // Run assertions on the response
+      expect(responseStatus).to.equal(200);
+
+    } catch (err) {
+      expect(err.message).to.be.null;
+
+    }
+  });
+});
+
+
+describe('GET /api/devoured', function () {
+
+  beforeEach(function(){
+    request = chai.request(server);
+
+  });
+  it('should find all devoured', async function(){
+
+    try {
+      const res = await request.get('/api/devoured');
+
+      let responseStatus = res.status;
+      let responseBody = res.body;
+      console.log(res.body)
+      expect(responseBody).to.equal('true');
       // Run assertions on the response
       expect(responseStatus).to.equal(200);
 

@@ -20,6 +20,10 @@ router.get("/api/burgers", function(req, res){
   // res.redirect(/burgers/)
 });
 
+router.get("/api/devoured", function (req, res){
+  res.json('true');
+});
+
 router.post("/api/burgers", function(req, res) {
   burger.create(['burger_name', 'devoured'], [req.body.burger_name, req.body.devoured], function(result) {
     res.json({id: result.insertId});
